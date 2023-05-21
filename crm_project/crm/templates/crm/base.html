@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRM</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cerulean/bootstrap.min.css">
+
+</head>
+<body>
+
+<nav class="navbar bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'ticket_list' %}">CRM</a>
+        <div class="d-flex">
+            {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url 'ticket_list' %}">Обращения</a>
+                <a class="nav-link" href="{% url 'create_ticket' %}">Создать Обращение</a>
+                <a class="nav-link" href="{% url 'search_tickets' %}">Поиск обращений</a>
+
+                {% if user.is_superuser or user.is_staff %}
+                    <a class="nav-link" href="{% url 'create_user' %}">Создать пользователья</a>
+                    <a class="nav-link" href="{% url 'user_roles' %}">Список пользователей</a>
+                {% endif %}
+
+                <li class="nav-link">
+                    {% if user.is_superuser or user.is_staff %}
+                        {{ user.username }}
+                        {% else %}
+                        {{ user.username }} - {{ user.role }}
+                    {% endif %}
+                </li>
+                <a class="nav-link" href="{% url 'logout' %}">Выйти</a>
+            {% endif %}
+
+        </div>
+      </div>
+    </nav>
+
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

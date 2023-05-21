@@ -1,0 +1,22 @@
+{% extends 'crm/base.html' %}
+
+
+{% block content %}
+
+<form method="GET" action="{% url 'search_tickets' %}">
+    <label for="query">Поиск</label>
+    <input class="form-control" type="text" id="query" name="query" placeholder="Введите ФИО, Лиц.счёт или Номер телефона" value="{% if query %} {{ query }} {% endif %}">
+    <button type="submit" class="btn btn-primary mt-3">Поиск</button>
+</form>
+
+<h2 class="mt-4">Результат поиска</h2>
+    {% for ticket in tickets %}
+        <div class="card mb-3">
+          <div class="card-body">
+            <a href="{% url 'ticket_detail' ticket_id=ticket.id %}" class="card-title h3">{{ ticket.title }}</a>
+            <p class="card-text">{{ ticket.description }}</p>
+            <p class="card-text"><small>{{ ticket.created_at }} | {{ ticket.responsible_person }} | {{ ticket.status }}</small></p>
+          </div>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'crm/base.html' %}
+
+
+{% block content %}
+    <a href="{% url 'ticket_list' %}" class="btn btn-secondary mt-3 mb-3">Назад</a>
+
+<div class="col g-3 mt-3" style="width: 400px; margin: 0 auto;">
+
+<form  method="post">
+  {% csrf_token %}
+
+{% if form.errors %}
+    {% for field, errors in form.errors.items %}
+        {% for error in errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    {% endfor %}
+{% endif %}
+
+
+<div class="mb-3">
+  {{ form.username }}
+</div>
+<div class="mb-3">
+  {{ form.password1 }}
+</div>
+<div class="mb-3">
+  {{ form.password2 }}
+</div>
+
+
+<label for="role">Выберите роль:</label><br>
+<select id="role" name="role" class="form-select form-select-sm">
+    <option value="operator">Оператор</option>
+    <option value="back_office">Специалист</option>
+</select>
+
+<input type="submit" value="Создать" class="btn btn-primary">
+
+</form>
+</div>
+{#<div class="mb-3">#}
+{#  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>#}
+{#  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>#}
+{#</div>#}
+
+
+{% endblock %}
+

@@ -1,0 +1,22 @@
+{% extends 'crm/base.html' %}
+
+{% block content %}
+  <h3 class="m-3">Список Обращений</h3>
+
+  {% for ticket in tickets %}
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <a href="{% url 'ticket_detail' ticket_id=ticket.id %}" class="card-title h3">{{ ticket.title }}</a>
+        <p class="card-text">{{ ticket.description }}</p>
+        <p class="card-text"><small>{{ ticket.created_at }} | {{ ticket.responsible_person }} | {{ ticket.status }}</small></p>
+      </div>
+    </div>
+
+  {% empty %}
+    <h5 class="m-3">Нет Обращений</h5>
+
+  {% endfor %}
+{% endblock %}
+
+

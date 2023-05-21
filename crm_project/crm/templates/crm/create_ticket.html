@@ -1,0 +1,39 @@
+{% extends 'crm/base.html' %}
+
+{% block content %}
+    <a href="{% url 'ticket_list' %}" class="btn btn-secondary mt-3 mb-3">Назад</a>
+
+  <h2>Добавить обращение</h2>
+  <form method="post">
+    {% csrf_token %}
+
+    {{ form.errors }}
+
+      <div class="col">
+        <label for="{{ form.account_number.id_for_label }}" class="form-label">Лицевой счёт</label>
+        {{ form.account_number }}
+
+        <label for="{{ form.full_name.id_for_label }}" class="form-label">ФИО</label>
+        {{ form.full_name }}
+
+        <label for="{{ form.phone_number.id_for_label }}" class="form-label">Номер телефона</label>
+        {{ form.phone_number }}
+
+        <label for="{{ form.title.id_for_label }}" class="form-label">Загаловок</label>
+        {{ form.title }}
+
+        <label for="{{ form.description.id_for_label }}" class="form-label">Описание</label>
+        {{ form.description }}
+
+
+          <p class="m-3">
+            {{ form.status }}
+            {{ form.responsible_person }}
+          </p>
+
+
+      </div>
+
+    <button type="submit" class="btn btn-primary">Создать</button>
+  </form>
+{% endblock %}

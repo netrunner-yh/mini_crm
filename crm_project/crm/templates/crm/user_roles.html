@@ -1,0 +1,47 @@
+{% extends 'crm/base.html' %}
+
+
+{% block content %}
+    <a href="{% url 'ticket_list' %}" class="btn btn-secondary mt-3 mb-3">Назад</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Пользователь</th>
+      <th scope="col">Роль</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in users %}
+        <tr>
+        {% if not user.is_superuser or not user.is_staff %}
+
+      <th scope="row"></th>
+      <td>{{ user.username }}</td>
+      <td>{{ user.role }}</td>
+      <td>
+          <form method="post" action="{% url 'update_role' user_id=user.id %}">
+            {% csrf_token %}
+            <select name="role">
+              <option value="operator" {% if user.role == 'operator' %}selected{% endif %}>Operator</option>
+              <option value="back_office" {% if user.role == 'back_office' %}selected{% endif %}>Back Office</option>
+            </select>
+            <input type="submit" value="Изменить">
+          </form>
+      </td>
+        <td>
+        <form method="POST" action="{% url 'delete_user' user.id %}">
+            {% csrf_token %}
+            <button type="submit">Удалить</button>
+        </form>
+        </td>
+
+          {% endif %}
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+

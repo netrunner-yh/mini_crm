@@ -1,0 +1,142 @@
+[
+  {
+    "model": "crm.ticket",
+    "pk": 1,
+    "fields": {
+      "account_number": "1234567890",
+      "full_name": "Иванов Иван",
+      "phone_number": "+7 (999) 123-4567",
+      "title": "Проблема с оплатой",
+      "description": "Не могу совершить платеж через онлайн-сервис",
+      "responsible_person": 1,
+      "status": "Открыт",
+      "created_at": "2023-05-20T09:00:00Z"
+    }
+  },
+  {
+    "model": "crm.ticket",
+    "pk": 2,
+    "fields": {
+      "account_number": "9876543210",
+      "full_name": "Петрова Анна",
+      "phone_number": "+7 (999) 987-6543",
+      "title": "Замена счетчика",
+      "description": "Необходимо заменить счетчик электроэнергии",
+      "responsible_person": 2,
+      "status": "Открыт",
+      "created_at": "2023-05-21T10:30:00Z"
+    }
+  },
+  {
+    "model": "crm.ticket",
+    "pk": 3,
+    "fields": {
+      "account_number": "4567890123",
+      "full_name": "Сидорова Елена",
+      "phone_number": "+7 (999) 456-7890",
+      "title": "Уточнение по тарифу",
+      "description": "Хочу узнать подробности о новом тарифе",
+      "responsible_person": 3,
+      "status": "Открыт",
+      "created_at": "2023-05-22T14:15:00Z"
+    }
+  },
+  {
+    "model": "crm.ticket",
+    "pk": 4,
+    "fields": {
+      "account_number": "0123456789",
+      "full_name": "Козлов Дмитрий",
+      "phone_number": "+7 (999) 012-3456",
+      "title": "Нет интернета",
+      "description": "Интернет не работает уже два дня",
+      "responsible_person": 2,
+      "status": "В обработке",
+      "created_at": "2023-05-23T16:45:00Z"
+    }
+  },
+  {
+    "model": "crm.ticket",
+    "pk": 5,
+    "fields": {
+      "account_number": "6789012345",
+      "full_name": "Морозова Александра",
+      "phone_number": "+7 (999) 678-9012",
+      "title": "Заявка на подключение услуги",
+      "description": "Хочу подключить дополнительные телевизионные каналы",
+      "responsible_person": 1,
+      "status": "Открыт",
+      "created_at": "2023-05-24T11:20:00Z"
+    }
+  },
+  {
+    "model": "crm.ticket",
+    "pk": 6,
+    "fields": {
+      "account_number": "3456789012",
+      "full_name": "Николаев Павел",
+      "phone_number": "+7 (999) 345-6789",
+      "title": "Запрос на техническую поддержку",
+      "description": "Не могу настроить роутер",
+      "responsible_person": 3,
+      "status": "Закрыт",
+      "created_at": "2023-05-25T09:10:00Z"
+    }
+  },
+  {
+    "model": "crm.ticket",
+    "pk": 7,
+    "fields": {
+      "account_number": "9012345678",
+      "full_name": "Федорова Ольга",
+      "phone_number": "+7 (999) 901-2345",
+      "title": "Заявка на перенос линии",
+      "description": "Хочу перенести телефонную линию на новый адрес",
+      "responsible_person": 1,
+      "status": "Открыт",
+      "created_at": "2023-05-26T13:40:00Z"
+    }
+  },
+  {
+    "model": "crm.ticket",
+    "pk": 8,
+    "fields": {
+      "account_number": "2345678901",
+      "full_name": "Исаев Андрей",
+      "phone_number": "+7 (999) 234-5678",
+      "title": "Запрос на уточнение тарифного плана",
+      "description": "Нужно разъяснить условия тарифного плана 'Эконом'",
+      "responsible_person": 3,
+      "status": "В обработке",
+      "created_at": "2023-05-27T15:50:00Z"
+    }
+  },
+  {
+    "model": "crm.ticket",
+    "pk": 9,
+    "fields": {
+      "account_number": "8901234567",
+      "full_name": "Алексеева Мария",
+      "phone_number": "+7 (999) 890-1234",
+      "title": "Замена модема",
+      "description": "Требуется заменить модем на новый",
+      "responsible_person": 2,
+      "status": "Открыт",
+      "created_at": "2023-05-28T10:05:00Z"
+    }
+  },
+  {
+    "model": "crm.ticket",
+    "pk": 10,
+    "fields": {
+      "account_number": "4567890123",
+      "full_name": "Смирнов Игорь",
+      "phone_number": "+7 (999) 456-7890",
+      "title": "Проблема с телефонной связью",
+      "description": "Нет набора телефонного номера",
+      "responsible_person": 1,
+      "status": "Открыт",
+      "created_at": "2023-05-29T12:15:00Z"
+    }
+  }
+]

@@ -1,0 +1,12 @@
+{% extends 'crm/base.html' %}
+
+{% block content %}
+    <a href="{% url 'ticket_detail' ticket_id=comment.ticket.id %}" class="btn btn-secondary mt-3">Back</a>
+  <form class="mt-5" method="post">
+    {% csrf_token %}
+      <label for="{{ form.content.id_for_label }}" class="form-label">Изменить комментарий</label>
+    {{ form.content }}
+    <button type="submit" class="btn btn-primary mt-3">Изменить</button>
+  </form>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'crm/base.html' %}
+
+
+
+{% block content %}
+<div class="col g-3 mt-3" style="width: 400px; margin: 0 auto;">
+
+<form method="post">
+  {% csrf_token %}
+
+    <div class="col mt-5">
+        {% if error %}<p>{{ error }}</p>{% endif %}
+        <label for="username" class="form-label">Имя Пользователья</label>
+        <input type="text" id="username" name="username" class="form-control mb-3" placeholder="Имя пользователья">
+        <label for="password" class="form-label">Пароль</label>
+        <input type="password" id="password" name="password" class="form-control mb-3" placeholder="Пароль">
+        <input type="submit" value="Войти" class="btn btn-primary bt-5">
+    </div>
+
+</form>
+</div>
+{% endblock %}
+
